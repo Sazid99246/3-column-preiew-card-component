@@ -1,0 +1,115 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --font--primary: "Lexend Deca", sans-serif;
+  --font--heading: "Big Shoulders Display", sans-serif;
+  --font-size--primary: 15px;
+
+  --color--primary--sedams: hsl(31, 77%, 52%);
+  --color--primary--suvs: hsl(184, 100%, 22%);
+  --color--primary--luxury: hsl(179, 100%, 13%);
+
+  --color--secondary-paragraph: hsla(0, 0%, 100%, 0.75);
+  --color--secondary-default: hsl(0, 0%, 95%);
+}
+
+.heading--primary {
+  font-family: var(--font--heading);
+  font-weight: 700;
+}
+
+.cards-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Add a box shadow to the card container */
+  max-height: 100vh; /* Set a maximum height of 100vh */
+  overflow-y: auto; /* Add vertical scroll if the content exceeds 100vh */
+}
+
+.card {
+  height: 30rem;
+  width: 18rem;
+  padding-left: 40px;
+  padding-top: 40px;
+  padding-right: 40px;
+}
+
+.content--primary,
+button {
+  font-family: var(--font--primary);
+  font-weight: 400;
+}
+
+.content--primary {
+  font-size: var(--font-size--primary);
+  color: var(--color--secondary-paragraph);
+  padding-top: 20px;
+  line-height: 25px;
+}
+
+.heading--primary {
+  color: var(--color--secondary-default);
+  padding-top: 20px;
+}
+
+.card--sedams {
+  background-color: var(--color--primary--sedams);
+}
+
+.card--suvs {
+  background-color: var(--color--primary--suvs);
+}
+
+.card--luxury {
+  background-color: var(--color--primary--luxury);
+}
+
+button {
+  margin-top: 5rem;
+  height: 3rem;
+  width: 8rem;
+  border-radius: 50px;
+  border: 0;
+}
+
+.card--sedams button {
+  color: var(--color--primary--sedams);
+}
+
+.card--suvs button {
+  color: var(--color--primary--suvs);
+}
+
+.card--luxury button {
+  color: var(--color--primary--luxury);
+}
+
+button:hover {
+  cursor: pointer;
+  color: var(--color--secondary-paragraph);
+  background: none;
+  border: 2px solid var(--color--secondary-paragraph);
+}
+
+@media (max-width: 600px) {
+  .card-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+  .cards-container {
+    margin: 20px 0;
+  }
+}
